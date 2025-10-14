@@ -31,7 +31,7 @@ export const TextBox = ({
   ...props
 }: TextBoxType) => {
   const hasError = !!errorMessage;
-  const color = (color: string) => (hasError ? "danger" : color);
+  // const color = (color: string) => (hasError ? "danger" : color);
 
   const renderLabel = (label: string) => {
     if (typeof label === "string") {

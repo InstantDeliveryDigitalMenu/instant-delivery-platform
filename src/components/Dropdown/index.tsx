@@ -35,10 +35,10 @@ const Dropdown = ({
   const wrapperRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
 
-  const handleOutsideClick = useCallback(() => {
-    setIsActive(false);
-    onToggle?.(false);
-  }, [isActive, onToggle]);
+  // const handleOutsideClick = useCallback(() => {
+  //   setIsActive(false);
+  //   onToggle?.(false);
+  // }, [isActive, onToggle]);
 
   const toggleDropdown = useCallback(() => {
     if (active !== undefined) return;

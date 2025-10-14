@@ -1,13 +1,13 @@
-import { useCallback, useState } from "react";
+import { ChangeEvent, useCallback, useState } from "react";
 
 import React from "react";
 
 import * as S from "./styles";
 
-import { SearchIcon } from "@/assets/icons";
-import { TextboxProps } from "@/components/atoms/textbox/Textbox";
+// import { SearchIcon } from "@/assets/icons";
+import { TextBoxProps } from "../TextBox/index.tsx";
 
-export type InputTextProps = TextboxProps &
+export type InputTextProps = TextBoxProps &
   React.InputHTMLAttributes<HTMLInputElement>;
 
 export interface InputSearchProps extends InputTextProps {
@@ -56,16 +56,16 @@ export const InputSearch = React.forwardRef<HTMLInputElement, InputSearchProps>(
         supportMessage={supportMessage}
         disabled={disabled}
         fullWidth={fullWidth}
-        rightIcon={rightIcon || <SearchIcon onClick={onSearch} />}
+        // rightIcon={rightIcon || <SearchIcon onClick={onSearch} />}
         bgColor={bgColor}
       >
         <S.Input
           ref={ref}
           disabled={disabled}
           onKeyDown={_handleKeyDown}
-          onChange={(e) => {
-            setValue(e.target.value)
-            onChange?.(e)
+          onChange={(e: ChangeEvent<HTMLInputElement>) => {
+            setValue(e.target.value);
+            onChange?.(e);
           }}
           value={value}
           {...props}

@@ -1,10 +1,13 @@
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
+import styled, { css } from "styled-components";
 
-export const UploadField = styled.div<{$disabled: boolean, $active: boolean, $fullWidth: boolean}>`
+export const UploadField = styled.div<{
+  $disabled: boolean;
+  $active: boolean;
+  $fullWidth: boolean;
+}>`
   cursor: ${({ $disabled }) => ($disabled ? "not-allowed" : "pointer")};
 
-  border: 2px dashed var(--border-color, #D9D9D9);
+  border: 2px dashed var(--border-color, #d9d9d9);
   display: flex;
   width: 29.3125rem;
   height: 16.25rem;
@@ -15,7 +18,7 @@ export const UploadField = styled.div<{$disabled: boolean, $active: boolean, $fu
   gap: var(--spacing-stack-lg, 24px);
 
   border-radius: var(--round-lg, 16px);
-  background: var(--bg-default, #F4F3F7);
+  background: var(--bg-default, #f4f3f7);
 
   ${({ $disabled }) =>
     $disabled &&
@@ -31,7 +34,7 @@ export const UploadField = styled.div<{$disabled: boolean, $active: boolean, $fu
   ${({ $fullWidth }) =>
     $fullWidth &&
     css`
-       width: 100%;
+      width: 100%;
     `}
 `;
 
@@ -47,7 +50,7 @@ export const TitleContainer = styled.div`
   text-align: center;
   gap: var(--spacing-stack-micro, 0.5rem);
 
-   button {
+  button {
     text-decoration: underline;
     margin-left: var(--spacing-stack-nano, 0.25rem);
   }

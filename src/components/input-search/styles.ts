@@ -1,9 +1,8 @@
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
+import styled, { css } from "styled-components";
 
-import { Textbox } from "../../atoms/textbox/Textbox";
+import { TextBox } from "../TextBox/index.tsx";
 
-export const Container = styled(Textbox)<{
+export const Container = styled(TextBox)<{
   bgColor: "transparent" | "strong" | "smooth";
 }>`
   background: var(--bg-smooth, #ffffff);
