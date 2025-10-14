@@ -1,4 +1,4 @@
-import * as HomeStyles from './styles.ts';
+import * as HomeStyles from "./styles.ts";
 
 function Home() {
   return (

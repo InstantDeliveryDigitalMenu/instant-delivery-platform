@@ -1,7 +1,7 @@
 export default {
-  endOfLine: 'auto',
+  endOfLine: "auto",
   semi: true,
-  trailingComma: 'none',
+  trailingComma: "none",
   singleQuote: false,
   printWidth: 80
 };

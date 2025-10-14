@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-named-as-default
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   html,
@@ -15,6 +15,21 @@ export const GlobalStyles = createGlobalStyle`
 
   * {
     box-sizing: border-box;
+
+    font-family: "Instrument Sans", sans-serif;
+
+    --primary: #F74A63;
+    --secondary: #FFFFFF;
+    --tertiary: #F6F5F5;
+
+    --white: #FFFFFF;
+    --black: #000000;
+
+    --font-default: #000000;
+    --font-lighter: #766666;
+    --font-gray: #615a5a;
+    --font-red: #b32525ff;
+    --font-white: #FFFFFF;
   }
 `;
 
