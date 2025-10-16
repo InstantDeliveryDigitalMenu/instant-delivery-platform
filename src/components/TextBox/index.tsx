@@ -38,11 +38,7 @@ export const TextBox = ({
       return (
         <Typography as="label" variant="bolder" color="lighter">
           {label}
-          {props.isRequired && (
-            <Typography as="label" color="lighter">
-              {" *"}
-            </Typography>
-          )}
+          {props.isRequired && " *"}
           {props.isOptional && (
             <Typography as="label" color="lighter">
               {props.isOptional ? props.isOptional : " (optional)"}

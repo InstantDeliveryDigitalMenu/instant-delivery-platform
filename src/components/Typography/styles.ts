@@ -36,14 +36,26 @@ export const Container = styled.div<{
       case "h1":
         return css`
           font-size: 4rem;
+
+          @media screen and (min-width: 1000px) and (max-width: 1600px) {
+            font-size: 3.5rem;
+          }
         `;
       case "h2":
         return css`
           font-size: 2rem;
+
+          @media screen and (min-width: 1000px) and (max-width: 1600px) {
+            font-size: 1.5rem;
+          }
         `;
       case "h3":
         return css`
           font-size: 1.5rem;
+
+          @media screen and (min-width: 1000px) and (max-width: 1600px) {
+            font-size: 1.3rem;
+          }
         `;
       case "h4":
         return css`
