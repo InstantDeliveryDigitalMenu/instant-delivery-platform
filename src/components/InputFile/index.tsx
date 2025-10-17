@@ -4,6 +4,7 @@ import React, { useRef, useState, useCallback } from "react";
 import { HiddenInput, UploadField, TitleContainer } from "./styles";
 
 import Typography from "../Typography";
+import Button from "../Button";
 
 export interface InputFileProps extends React.HTMLAttributes<HTMLDivElement> {
   accept?: string[];
@@ -95,16 +96,12 @@ const InputFile = ({
         <div>loading...</div>
       ) : (
         <>
-          <div>icon</div>
           <TitleContainer>
             <Typography as="span" color="lighter">
               {title}
-              <button
-                // variant="ghost"
-                disabled={isDisabled}
-              >
+              <Button size="md" disabled={isDisabled}>
                 {textButton}
-              </button>
+              </Button>
             </Typography>
             <Typography as="span" color="lighter">
               {subtitle}

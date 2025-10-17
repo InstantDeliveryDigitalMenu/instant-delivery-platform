@@ -1,5 +1,5 @@
 /* eslint-disable import/no-named-as-default */
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   display: flex;
@@ -21,14 +21,14 @@ export const Content = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
 
-  padding: 3rem 4rem 1rem 4rem;
+  padding: 2.5rem 4rem 0rem 4rem;
 
-  @media screen and (max-width: 1000px) {
-    padding: 1.25rem 3rem 3rem 3rem;
+  @media screen and (max-width: 1100px) {
+    padding: 1.25rem 3rem 1rem 3rem;
   }
 
   @media screen and (max-width: 850px) {
-    padding: 2rem 4rem 1rem 4rem;
+    padding: 2rem 4rem 0rem 4rem;
   }
 
   @media screen and (max-width: 450px) {
@@ -104,64 +104,103 @@ export const NavButton = styled.div<{ active?: "true" }>`
   }
 `;
 
-export const ContentWrapper = styled.div`
+export const HeaderBox = styled.div`
   display: flex;
-  flex-direction: row;
-  width: 100%;
+  flex-direction: column;
 
-  gap: 2rem;
+  gap: 0.3rem;
+  padding-top: 0.5rem;
+`;
 
-  margin: 1.5rem 0rem;
+export const ContentWrapper = styled.div`
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: fit-content;
+  justify-items: center;
+  gap: 6rem;
 
-  @media screen and (max-height: 768px) {
-    margin: 0.5rem 0rem;
-  }
-  @media screen and (max-width: 850px) {
-    display: flex;
-    flex-direction: column;
+  padding: 0.5rem 0;
+
+  @media screen and (max-width: 1100px) {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 2rem;
   }
 `;
 
-export const LeftContent = styled.section`
+export const CardContent = styled.div<{ wrappered?: "true" }>`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
 
-  gap: 1rem;
+  /* gap: 0.5rem; */
+  padding: 1rem 1rem 0 1rem;
+
+  border: 2px solid var(--gray);
 
   > div {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-
-    @media screen and (max-height: 768px) and (min-width: 1000px) {
-      gap: 0.25rem;
-    }
   }
 
-  @media screen and (max-height: 768px) and (min-width: 1000px) {
-    gap: 0.25rem;
-  }
-`;
-
-export const RightContent = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-
-  .infos {
+  .header {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    align-items: center;
+
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
   }
+
+  ${({ wrappered }) =>
+    wrappered &&
+    css`
+      display: flex;
+      flex-direction: row;
+
+      gap: 2rem;
+
+      @media screen and (max-width: 600px) {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    `}
+`;
+
+export const ButtonsBox = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  gap: 1rem;
+`;
+
+export const CardWrapper = styled.div`
+  display: flex;
+`;
+
+export const Footer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 4rem;
 
   .buttons {
     display: flex;
+    flex-direction: row;
+    height: 100%;
     justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 1rem;
 
-    padding-top: 2rem;
     gap: 1rem;
+  }
+
+  @media screen and (max-width: 750px) {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 `;

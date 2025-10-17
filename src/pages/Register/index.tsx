@@ -4,6 +4,7 @@ import General from "./General/index.tsx";
 import Appearance from "./Apperance/index.tsx";
 
 import * as RegisterStyles from "./styles.ts";
+import Payment from "./Payment/index.tsx";
 
 type Steps =
   | "General"
@@ -19,17 +20,22 @@ function Register() {
 
   const RenderSteps = () => {
     switch (steps) {
-      case "Appearance":
-        return <General nextStep={() => setSteps("Appearance")} />;
       case "General":
+        return <General nextStep={() => setSteps("Appearance")} />;
+      case "Appearance":
         return (
           <Appearance
             nextStep={() => setSteps("Payment")}
             lastStep={() => setSteps("General")}
           />
         );
-      // case "Payment":
-      //   <Payment />;
+      case "Payment":
+        return (
+          <Payment
+            nextStep={() => setSteps("Delivery")}
+            lastStep={() => setSteps("General")}
+          />
+        );
       // case "Delivery":
       //   <Delivery />;
       // case "Contact":

@@ -5,7 +5,9 @@ import * as InputTextStyles from "./styles";
 import { TextBox, type TextBoxProps } from "../TextBox";
 
 export type InputTextProps = TextBoxProps &
-  React.InputHTMLAttributes<HTMLInputElement>;
+  React.InputHTMLAttributes<HTMLInputElement> & {
+    inputSize?: TextBoxProps["size"];
+  };
 
 export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
   (
@@ -20,6 +22,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
       fullWidth,
       leftIcon,
       rightIcon,
+      inputSize,
       ...props
     },
     ref
@@ -35,6 +38,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
       fullWidth={fullWidth}
       leftIcon={leftIcon}
       rightIcon={rightIcon}
+      size={inputSize}
     >
       <InputTextStyles.Input ref={ref} disabled={disabled} {...props} />
     </TextBox>

@@ -1,9 +1,11 @@
 import styled, { css } from "styled-components";
+import { TextBoxSize } from ".";
 
 interface ContentProps {
   $error?: boolean;
   $fullWidth: boolean;
   $disabled: boolean;
+  size: TextBoxSize;
 }
 
 export const Container = styled.div`
@@ -11,7 +13,7 @@ export const Container = styled.div`
   flex-direction: column;
 
   width: 100%;
-  gap: var(--spacing-stack-nano, 0.25rem);
+  gap: 0.25rem;
 
   * {
     cursor: pointer;
@@ -40,8 +42,7 @@ export const Content = styled.div<ContentProps>`
   justify-content: flex-start;
   width: 20.625rem;
 
-  gap: var(--spacing-inline-micro, 0.5rem);
-  padding: var(--spacing-padding-tiny, 0.75rem) var(--spacing-padding-sm, 1rem);
+  gap: 0.5rem;
 
   border: 0.0625rem solid var(--tertiary, #f6f5f5);
 
@@ -57,19 +58,32 @@ export const Content = styled.div<ContentProps>`
     border-color: var(--primary, #f74a63);
   }
 
+  ${({ size }) => {
+    switch (size) {
+      case "sm":
+        return css`
+          padding: 0.25rem 0.5rem;
+        `;
+      case "md":
+        return css`
+          padding: 0.75rem 1rem;
+        `;
+    }
+  }}
+
   ${({ $error, $disabled }) =>
     $error &&
     !$disabled &&
     css`
-      border-color: var(--fg-feedback-error, #b2003b);
-      color: var(--fg-feedback-error, #b2003b);
+      border-color: #b2003b;
+      color: #b2003b;
 
       > * {
-        color: var(--fg-feedback-error, #b2003b);
+        color: #b2003b;
       }
 
       &:hover {
-        border-color: var(--fg-feedback-error, #b2003b);
+        border-color: #b2003b;
       }
     `}
 
@@ -84,11 +98,11 @@ export const Content = styled.div<ContentProps>`
     css`
       cursor: not-allowed;
 
-      background-color: var(--bg-strong, #e9e7ee);
-      border-color: var(--bg-strong, #e9e7ee);
+      background-color: #e9e7ee;
+      border-color: #e9e7ee;
 
       &:hover {
-        border-color: var(--bg-strong, #e9e7ee);
+        border-color: #e9e7ee;
       }
 
       > * {

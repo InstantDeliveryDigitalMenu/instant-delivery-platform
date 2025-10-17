@@ -12,6 +12,37 @@ export const Container = styled.div`
   @media screen and (max-width: 1000px) {
     flex-direction: column;
     align-items: flex-start;
+    overflow-y: auto;
+  }
+`;
+
+export const LeftContent = styled.section`
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 100%;
+  min-height: 100vh;
+  max-height: 100vh;
+
+  padding: 5rem;
+
+  background-color: var(--primary);
+
+  overflow-y: auto;
+
+  > h1 {
+    line-height: 4rem;
+  }
+
+  @media screen and (min-width: 1000px) and (max-width: 1600px) {
+    padding: 1.5rem 3rem 0rem 3rem;
+  }
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 1.5rem 2rem;
   }
 `;
 
@@ -20,6 +51,7 @@ export const RightContent = styled.section`
   flex-direction: column;
   width: 60%;
   height: 100%;
+  min-height: 100vh;
 
   padding: 5rem;
   overflow: auto;
@@ -119,35 +151,6 @@ export const StepsDotNumber = styled.span`
   font-weight: 800;
 
   margin: -3px 0;
-`;
-
-export const LeftContent = styled.section`
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-  height: 100%;
-  max-height: 100vh;
-
-  padding: 5rem;
-
-  background-color: var(--primary);
-
-  overflow-y: auto;
-
-  > h1 {
-    line-height: 4rem;
-  }
-
-  @media screen and (min-width: 1000px) and (max-width: 1600px) {
-    padding: 1.5rem 3rem 0rem 3rem;
-  }
-  @media screen and (max-width: 1000px) {
-    width: 100%;
-  }
-
-  @media screen and (max-width: 500px) {
-    padding: 1.5rem 2rem;
-  }
 `;
 
 export const UrlContainer = styled.div`

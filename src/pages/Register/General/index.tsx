@@ -9,6 +9,7 @@ import InputText from "#root/components/InputText/index.tsx";
 import InputTextArea from "#root/components/InputTextarea/index.tsx";
 import InputSelect from "#root/components/InputSelect/index.tsx";
 import { InstantDeliveryLogo } from "#root/assets/index.ts";
+import Button from "#root/components/Button/index.tsx";
 
 interface StepItemProps {
   number: number;
@@ -192,7 +193,7 @@ function General({ nextStep }: GeneralProps) {
               errorMessage={errors.name && "Este campo é obrigatório"}
             />
           </GeneralStyles.AddressContainer>
-          <button type="submit">Enviar</button>
+          <Button type="submit">Enviar</Button>
         </form>
       </GeneralStyles.RightContent>
     </GeneralStyles.Container>

@@ -3,22 +3,34 @@ import React from "react";
 // import { ThemeColors } from "@/interfaces/colors";
 
 import * as ButtonStyles from "./styles.ts";
+import Typography, { TextColor } from "../Typography/index.tsx";
+
+export type BackgroundColors =
+  | "primary"
+  | "secondary"
+  | "tertiary"
+  | "white"
+  | "black"
+  | "gray";
+
+export type ButtonSize = "xs" | "sm" | "md" | "xl" | "full";
+export type ButtonVariant = "default" | "outline" | "ghost";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  // color?: ThemeColors;
   dataTestId?: string;
   error?: boolean;
   leftComponent?: React.ReactNode;
   rightComponent?: React.ReactNode;
-  size?: "xs" | "sm" | "md";
-  variant?: "default" | "outline" | "ghost";
+  size?: ButtonSize;
+  variant?: ButtonVariant;
+  textColor?: TextColor;
+  color?: BackgroundColors;
 }
 
 export const Button = ({
   children,
   className,
-  // color = "primary",
   dataTestId = "",
   error = false,
   leftComponent,
@@ -26,21 +38,31 @@ export const Button = ({
   size = "md",
   variant = "default",
   type = "button",
+  color = "primary",
+  textColor = "white",
   ...props
 }: ButtonProps) => (
-  <ButtonStyles.Button data-testid={dataTestId} type={type} {...props}>
+  <ButtonStyles.ButtonContainer
+    data-testid={dataTestId}
+    type={type}
+    bgcolor={color}
+    size={size}
+    {...props}
+  >
     {leftComponent && (
       <ButtonStyles.IconContainer data-testid={`${dataTestId}-left-icon`}>
         {leftComponent}
       </ButtonStyles.IconContainer>
     )}
-    {children}
+    <Typography as="span" color={textColor}>
+      {children}
+    </Typography>
     {rightComponent && (
       <ButtonStyles.IconContainer data-testid={`${dataTestId}-right-icon`}>
         {rightComponent}
       </ButtonStyles.IconContainer>
     )}
-  </ButtonStyles.Button>
+  </ButtonStyles.ButtonContainer>
 );
 
 export default Button;

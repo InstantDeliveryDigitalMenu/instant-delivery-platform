@@ -3,6 +3,8 @@ import React from "react";
 import * as TextBoxStyles from "./styles.ts";
 import Typography from "../Typography/index.tsx";
 
+export type TextBoxSize = "sm" | "md";
+
 export interface TextBoxProps {
   disabled?: boolean;
   errorMessage?: string;
@@ -15,6 +17,7 @@ export interface TextBoxProps {
   isRequired?: boolean;
   isOptional?: string;
   supportMessage?: string;
+  size?: TextBoxSize;
 }
 
 type TextBoxType = TextBoxProps & React.HTMLAttributes<HTMLDivElement>;
@@ -28,6 +31,7 @@ export const TextBox = ({
   label,
   support,
   children,
+  size = "md",
   ...props
 }: TextBoxType) => {
   const hasError = !!errorMessage;
@@ -69,6 +73,7 @@ export const TextBox = ({
         $error={hasError}
         $disabled={disabled}
         $fullWidth={fullWidth}
+        size={size}
         {...props}
       >
         {leftIcon && (
