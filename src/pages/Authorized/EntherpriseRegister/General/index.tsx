@@ -35,7 +35,7 @@ function General({ nextStep }: GeneralProps) {
     handleSubmit,
     formState: { errors }
   } = useForm<FormSchema>();
-  const handleFrmSubmit: SubmitHandler<FormSchema> = (data) => {
+  const handleFormSubmit: SubmitHandler<FormSchema> = (data) => {
     console.log(data);
     if (data) {
       nextStep();
@@ -80,7 +80,7 @@ function General({ nextStep }: GeneralProps) {
         </GeneralStyles.StepsContainer>
       </GeneralStyles.LeftContent>
       <GeneralStyles.RightContent>
-        <form onSubmit={handleSubmit(handleFrmSubmit)}>
+        <form onSubmit={handleSubmit(handleFormSubmit)}>
           <Typography as="h2" variant="bolder" color="gray">
             Dados Gerais - Etapa 1 de 6
           </Typography>

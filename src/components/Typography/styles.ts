@@ -1,13 +1,23 @@
 import styled, { css } from "styled-components";
-import { TextColor, TextTypes, TextVariants } from ".";
+import { TextColor, TextSizes, TextTypes, TextVariants } from ".";
 
 export const Container = styled.div<{
   variant: TextVariants;
   as: TextTypes;
   color: TextColor;
+  size: TextSizes;
 }>`
   display: flex;
-  width: 100%;
+
+  ${({ size }) => {
+    size === "full"
+      ? css`
+          width: 100%;
+        `
+      : css`
+          width: fit-content;
+        `;
+  }}
 
   padding: 0.25rem 0;
   margin: 0;
