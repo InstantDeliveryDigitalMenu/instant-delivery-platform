@@ -37,7 +37,7 @@ function Register() {
         .post("/accounts-google", {
           idToken: credential
         })
-        .then((response) => {
+        .then(() => {
           toast.success(
             "Registro realizado com sucesso! Faça login para continuar."
           );

@@ -10,13 +10,20 @@ export const Container = styled.div<{
   display: flex;
 
   ${({ size }) => {
-    size === "full"
-      ? css`
-          width: 100%;
-        `
-      : css`
+    switch (size) {
+      case "fit":
+        return css`
           width: fit-content;
         `;
+      case "full":
+        return css`
+          width: 100%;
+        `;
+      default:
+        return css`
+          width: fit-content;
+        `;
+    }
   }}
 
   padding: 0.25rem 0;
