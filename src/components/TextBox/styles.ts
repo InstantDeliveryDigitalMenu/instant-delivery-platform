@@ -45,6 +45,7 @@ export const Content = styled.div<ContentProps>`
   gap: 0.5rem;
 
   border: 0.0625rem solid var(--tertiary, #f6f5f5);
+  border-radius: 0.5rem;
 
   color: var(--font-lighter, #766666);
   background-color: var(--tertiary, #f6f5f5);

@@ -8,10 +8,10 @@ import svgr from "vite-plugin-svgr";
 
 export default defineConfig({
   plugins: [
-    react(),
     svgr({
-      include: "**/*.svg" // This ensures all .svg files are processed
-    })
+      include: "**/*.svg?react"
+    }),
+    react()
   ],
   server: {
     port: 3000

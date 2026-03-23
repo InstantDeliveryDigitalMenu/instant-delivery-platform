@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Authorized/Home/index.tsx";
 import EntherpriseRegister from "./pages/Authorized/EntherpriseRegister/index.tsx";
@@ -10,7 +10,7 @@ function GlobalRoutes() {
     <BrowserRouter>
       <Routes>
         {/*Unauthorized Routes*/}
-        <Route Component={Login} path="" />
+        <Route Component={() => <Navigate replace to="/login" />} path="/" />
         <Route Component={Login} path="/login" />
         <Route Component={Register} path="/register" />
 

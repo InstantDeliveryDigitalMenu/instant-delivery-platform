@@ -4,10 +4,11 @@ import { toast } from "react-toastify";
 
 import * as LoginStyles from "./styles.ts";
 import api from "../../../services/api.ts";
-import Typography from "#root/components/Typography/index.tsx";
 import { SubmitHandler, useForm } from "react-hook-form";
 import InputText from "#root/components/InputText/index.tsx";
 import Button from "#root/components/Button/index.tsx";
+import { MailIcon, PadlockIcon, RestaurantImage } from "#root/assets/index.ts";
+import Typography from "#root/components/Typography/index.tsx";
 
 interface FormSchema {
   email: string;
@@ -50,28 +51,34 @@ function Login() {
 
   return (
     <LoginStyles.Container>
-      <LoginStyles.Content>
-        <Typography as="h4" color="lighter" size="fit">
-          Login
-        </Typography>
+      <LoginStyles.LeftContent>
+        <LoginStyles.LoginLogo />
         <form onSubmit={handleSubmit(handleFormSubmit)}>
-          <InputText
-            label="Email:"
-            placeholder="Email"
-            fullWidth
-            isRequired
-            {...register("email", { required: true })}
-            errorMessage={errors.email && "Este campo é obrigatório"}
-          />
-          <InputText
-            label="Senha:"
-            placeholder="Senha"
-            fullWidth
-            isRequired
-            {...register("password", { required: true })}
-            errorMessage={errors.password && "Este campo é obrigatório"}
-          />
-          <LoginStyles.GoogleLoginBox>
+          <LoginStyles.InputContainer>
+            <InputText
+              placeholder="Email"
+              fullWidth
+              isRequired
+              {...register("email", { required: true })}
+              errorMessage={errors.email && "Este campo é obrigatório"}
+              leftIcon={<MailIcon />}
+            />
+            <InputText
+              placeholder="Senha"
+              fullWidth
+              isRequired
+              {...register("password", { required: true })}
+              errorMessage={errors.password && "Este campo é obrigatório"}
+              leftIcon={<PadlockIcon />}
+            />
+          </LoginStyles.InputContainer>
+          <LoginStyles.RememberMeBox>
+            <input type="checkbox" id="rememberMe" />
+            <Typography variant="default" as="label" htmlFor="rememberMe">
+              Mantenha-me conectado
+            </Typography>
+          </LoginStyles.RememberMeBox>
+          <LoginStyles.ButtonsBox>
             <GoogleLogin
               onSuccess={(credentialResponse) => {
                 handleGoogleLoginSuccess(credentialResponse);
@@ -80,10 +87,15 @@ function Login() {
                 toast.error("Erro ao realizar login com Google!");
               }}
             />
-          </LoginStyles.GoogleLoginBox>
-          <Button type="submit">Entrar</Button>
+            <Button type="submit" size="xl">
+              Entrar
+            </Button>
+          </LoginStyles.ButtonsBox>
         </form>
-      </LoginStyles.Content>
+      </LoginStyles.LeftContent>
+      <LoginStyles.RightContent>
+        <img src={RestaurantImage} alt="Imagem Ilustrativa - Restaurante" />
+      </LoginStyles.RightContent>
     </LoginStyles.Container>
   );
 }

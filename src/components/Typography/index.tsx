@@ -14,6 +14,7 @@ export interface TypographyProps {
   dataTestId?: string;
   color?: TextColor;
   size?: TextSizes;
+  htmlFor?: string;
 }
 
 const Typography = ({
@@ -21,7 +22,8 @@ const Typography = ({
   as = "h4",
   color = "default",
   variant = "default",
-  size = "full"
+  size = "full",
+  htmlFor
 }: TypographyProps): JSX.Element => {
   return (
     <TypographyStyles.Container
@@ -29,6 +31,7 @@ const Typography = ({
       variant={variant}
       color={color}
       size={size}
+      htmlFor={htmlFor}
     >
       {children}
     </TypographyStyles.Container>

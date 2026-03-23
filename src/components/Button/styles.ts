@@ -11,7 +11,7 @@ export const ButtonContainer = styled.button<{
   align-items: center;
   width: fit-content;
 
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   border: none;
 
   text-decoration: none !important;
@@ -55,7 +55,7 @@ export const ButtonContainer = styled.button<{
         `;
       case "xl":
         return css`
-          padding: 0.5rem 2rem;
+          padding: 0.5rem 4rem;
         `;
       case "full":
         return css`
