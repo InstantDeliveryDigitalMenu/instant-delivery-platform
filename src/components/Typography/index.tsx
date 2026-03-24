@@ -2,7 +2,14 @@ import { ReactNode } from "react";
 
 import * as TypographyStyles from "./styles.ts";
 
-export type TextColor = "default" | "lighter" | "white" | "red" | "gray";
+export type TextColor =
+  | "default"
+  | "lighter"
+  | "white"
+  | "red"
+  | "gray"
+  | "gray-lighter"
+  | "gray-darker";
 export type TextVariants = "default" | "bolder" | "lighter";
 export type TextTypes = "h1" | "h2" | "h3" | "h4" | "span" | "label";
 export type TextSizes = "full" | "fit";

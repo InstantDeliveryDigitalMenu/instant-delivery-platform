@@ -47,6 +47,8 @@ export const Button = ({
     type={type}
     bgcolor={color}
     size={size}
+    variant={variant}
+    textColor={textColor}
     {...props}
   >
     {leftComponent && (

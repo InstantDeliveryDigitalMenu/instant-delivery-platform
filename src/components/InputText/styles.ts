@@ -22,6 +22,7 @@ export const Input = styled.input`
   font-weight: 400;
   line-height: 1.25rem;
   letter-spacing: 0.14px;
+  cursor: auto;
 
   &::placeholder {
     color: var(--font-lighter, #938f9a);

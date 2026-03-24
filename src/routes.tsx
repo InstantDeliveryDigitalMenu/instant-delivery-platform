@@ -4,6 +4,7 @@ import Home from "./pages/Authorized/Home/index.tsx";
 import EntherpriseRegister from "./pages/Authorized/EntherpriseRegister/index.tsx";
 import Login from "./pages/Unauthorized/Login/index.tsx";
 import Register from "./pages/Unauthorized/Register/index.tsx";
+import EnterpriseMenu from "./pages/Authorized/EnterpriseMenu/index.tsx";
 
 function GlobalRoutes() {
   return (
@@ -17,6 +18,7 @@ function GlobalRoutes() {
         {/*Authorized Routes*/}
         <Route Component={EntherpriseRegister} path="/entherprese-register" />
         <Route Component={Home} path="/home" />
+        <Route Component={EnterpriseMenu} path="/menu" />
       </Routes>
     </BrowserRouter>
   );

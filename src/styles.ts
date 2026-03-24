@@ -25,10 +25,14 @@ export const GlobalStyles = createGlobalStyle`
     --white: #FFFFFF;
     --black: #000000;
     --gray: #E5E5E5;
+    --gray-darker: #9E9E9E;
+    --gray-lighter: #A3A0A0;
 
     --font-default: #000000;
     --font-lighter: #766666;
     --font-gray: #615a5a;
+    --font-gray-darker: #9E9E9E;
+    --font-gray-lighter: #A3A0A0;
     --font-red: #b32525ff;
     --font-white: #FFFFFF;
   }
