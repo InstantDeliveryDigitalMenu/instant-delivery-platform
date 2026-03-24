@@ -6,6 +6,7 @@ export const Container = styled.div<{
   as: TextTypes;
   color: TextColor;
   size: TextSizes;
+  customColor?: string;
 }>`
   display: flex;
 
@@ -29,7 +30,8 @@ export const Container = styled.div<{
   padding: 0.25rem 0;
   margin: 0;
 
-  color: ${({ color }) => `var(--font-${color})`};
+  color: ${({ color, customColor }) =>
+    customColor ? `${customColor}` : `var(--${color})`};
 
   ${({ variant }) => {
     switch (variant) {

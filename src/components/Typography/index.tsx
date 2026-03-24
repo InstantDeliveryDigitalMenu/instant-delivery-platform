@@ -14,6 +14,11 @@ export type TextVariants = "default" | "bolder" | "lighter";
 export type TextTypes = "h1" | "h2" | "h3" | "h4" | "span" | "label";
 export type TextSizes = "full" | "fit";
 
+export interface CustomColorsProps {
+  primary: string;
+  secundary: string;
+}
+
 export interface TypographyProps {
   children: ReactNode;
   as: TextTypes;
@@ -22,6 +27,7 @@ export interface TypographyProps {
   color?: TextColor;
   size?: TextSizes;
   htmlFor?: string;
+  customColor?: string;
 }
 
 const Typography = ({
@@ -30,7 +36,8 @@ const Typography = ({
   color = "default",
   variant = "default",
   size = "full",
-  htmlFor
+  htmlFor,
+  customColor
 }: TypographyProps): JSX.Element => {
   return (
     <TypographyStyles.Container
@@ -39,6 +46,7 @@ const Typography = ({
       color={color}
       size={size}
       htmlFor={htmlFor}
+      customColor={customColor}
     >
       {children}
     </TypographyStyles.Container>

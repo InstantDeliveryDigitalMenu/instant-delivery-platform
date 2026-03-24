@@ -31,6 +31,8 @@ export interface EnterpriseMenuDataProps {
   openingHours: { open: string; close: string };
   minOrder: number;
   imageUrl: string;
+  primaryColor: string;
+  secundaryColor: string;
   categories: MenuCategoryProps[];
 }
 
@@ -68,6 +70,9 @@ function EnterpriseMenu() {
   const listCategories =
     menuData?.categories.map((category) => category.name) || [];
 
+  const primaryColor = menuData?.primaryColor;
+  const secondaryColor = menuData?.secundaryColor;
+
   return (
     <EnterpriseMenuStyles.Container>
       <EnterpriseMenuSidebar
@@ -76,6 +81,8 @@ function EnterpriseMenu() {
         setSearchParams={setSearchParams}
         handleChangeCategoryFilter={handleChangeCategoryFilter}
         listCategories={listCategories}
+        primaryColor={primaryColor}
+        secundaryColor={secondaryColor}
       />
       <EnterpriseMenuStyles.RightContent>
         {filteredItems.length > 0 ? (

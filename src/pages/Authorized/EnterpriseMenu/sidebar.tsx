@@ -17,6 +17,8 @@ interface EnterpreseMenuSidebarProps {
   setSearchParams: (params: { query: string; category: string }) => void;
   handleChangeCategoryFilter: (category: string) => void;
   listCategories: string[];
+  primaryColor: string;
+  secundaryColor: string;
 }
 
 const EnterpriseMenuSidebar = ({
@@ -24,7 +26,9 @@ const EnterpriseMenuSidebar = ({
   searchParams,
   setSearchParams,
   handleChangeCategoryFilter,
-  listCategories
+  listCategories,
+  primaryColor,
+  secundaryColor
 }: EnterpreseMenuSidebarProps) => {
   const enterpriseDisplayedName =
     menuData?.name.length > 50
@@ -32,6 +36,10 @@ const EnterpriseMenuSidebar = ({
       : menuData?.name;
 
   const categoryFilterActive = listCategories.includes(searchParams.category);
+
+  const customColors = { primary: primaryColor, secundary: secundaryColor };
+
+  const colors = !categoryFilterActive ? customColors : undefined;
 
   return (
     <EnterpriseMenuStyles.LeftContent>
@@ -86,20 +94,12 @@ const EnterpriseMenuSidebar = ({
               onClick={() => {
                 handleChangeCategoryFilter("");
               }}
+              customColors={colors}
+              color="secondary"
+              textColor="gray-lighter"
               variant={!categoryFilterActive ? "default" : "outline"}
-              textColor={!categoryFilterActive ? "white" : "gray-lighter"}
             >
               Menu
-            </Button>
-            <Button
-              size="full"
-              variant="outline"
-              textColor="gray-lighter"
-              onClick={() => {
-                handleChangeCategoryFilter("Hamburger");
-              }}
-            >
-              Ofertas
             </Button>
             <ButtonsAccordion
               actionAccordion={() => console.log("")}
@@ -107,6 +107,7 @@ const EnterpriseMenuSidebar = ({
               onClickSelectedItem={handleChangeCategoryFilter}
               isActiveFilter={categoryFilterActive}
               searchParam={searchParams.category}
+              customColors={customColors}
             />
             <Button size="full" variant="outline" textColor="gray-lighter">
               Fale conosco

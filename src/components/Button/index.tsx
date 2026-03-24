@@ -3,7 +3,10 @@ import React from "react";
 // import { ThemeColors } from "@/interfaces/colors";
 
 import * as ButtonStyles from "./styles.ts";
-import Typography, { TextColor } from "../Typography/index.tsx";
+import Typography, {
+  CustomColorsProps,
+  TextColor
+} from "../Typography/index.tsx";
 
 export type BackgroundColors =
   | "primary"
@@ -26,6 +29,7 @@ export interface ButtonProps
   variant?: ButtonVariant;
   textColor?: TextColor;
   color?: BackgroundColors;
+  customColors?: CustomColorsProps;
 }
 
 export const Button = ({
@@ -40,6 +44,7 @@ export const Button = ({
   type = "button",
   color = "primary",
   textColor = "white",
+  customColors,
   ...props
 }: ButtonProps) => (
   <ButtonStyles.ButtonContainer
@@ -49,6 +54,7 @@ export const Button = ({
     size={size}
     variant={variant}
     textColor={textColor}
+    customColors={customColors}
     {...props}
   >
     {leftComponent && (
@@ -56,7 +62,11 @@ export const Button = ({
         {leftComponent}
       </ButtonStyles.IconContainer>
     )}
-    <Typography as="span" color={textColor}>
+    <Typography
+      as="span"
+      color={textColor}
+      customColor={customColors?.secundary}
+    >
       {children}
     </Typography>
     {rightComponent && (

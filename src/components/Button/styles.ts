@@ -1,13 +1,14 @@
 import styled, { css } from "styled-components";
 
 import { BackgroundColors, ButtonSize, ButtonVariant } from ".";
-import { TextColor } from "../Typography";
+import { CustomColorsProps, TextColor } from "../Typography";
 
 export const ButtonContainer = styled.button<{
   bgcolor: BackgroundColors;
   size: ButtonSize;
   variant: ButtonVariant;
   textColor: TextColor;
+  customColors?: CustomColorsProps;
 }>`
   display: flex;
   justify-content: center;
@@ -19,7 +20,8 @@ export const ButtonContainer = styled.button<{
 
   text-decoration: none !important;
 
-  background-color: ${({ bgcolor }) => `var(--${bgcolor})`};
+  background-color: ${({ bgcolor, customColors }) =>
+    customColors ? `${customColors.primary}` : `var(--${bgcolor})`};
 
   cursor: pointer;
 

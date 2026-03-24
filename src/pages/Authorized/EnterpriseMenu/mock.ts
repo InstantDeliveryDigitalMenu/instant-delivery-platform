@@ -7,6 +7,8 @@ const mockedData: EnterpriseMenuDataProps = {
   openingHours: { open: "13:00", close: "20:00" },
   minOrder: 0.31,
   imageUrl: RestaurantePlaceholderLogo,
+  primaryColor: "#892920",
+  secundaryColor: "#FFF",
   categories: [
     {
       name: "Refeições",

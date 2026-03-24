@@ -8,6 +8,10 @@ interface ButtonsAccordionProps {
   onClickSelectedItem: (item: string) => void;
   isActiveFilter: boolean;
   searchParam?: string;
+  customColors: {
+    primary: string;
+    secundary: string;
+  };
 }
 
 const ButtonsAccordion = ({
@@ -15,11 +19,19 @@ const ButtonsAccordion = ({
   actionAccordion,
   onClickSelectedItem,
   isActiveFilter,
-  searchParam
+  searchParam,
+  customColors
 }: ButtonsAccordionProps) => {
   const isItemSelected = (item: string) => {
     return searchParam === item;
   };
+
+  const colors = isActiveFilter
+    ? {
+        primary: customColors.primary,
+        secundary: customColors.secundary
+      }
+    : undefined;
 
   return (
     <ButtonsAccordionStyles.Container>
@@ -28,6 +40,7 @@ const ButtonsAccordion = ({
         variant={isActiveFilter ? "default" : "outline"}
         textColor={isActiveFilter ? "white" : "gray-lighter"}
         onClick={() => actionAccordion()}
+        customColors={colors}
       >
         Categorias
       </Button>
@@ -36,11 +49,13 @@ const ButtonsAccordion = ({
           <Button
             size="full"
             variant={isItemSelected(item) ? "default" : "outline"}
-            textColor={isItemSelected(item) ? "white" : "gray-lighter"}
+            color="secondary"
+            textColor="gray-lighter"
             key={item}
             onClick={() => {
               onClickSelectedItem(item);
             }}
+            customColors={isItemSelected(item) ? colors : undefined}
           >
             {item}
           </Button>
