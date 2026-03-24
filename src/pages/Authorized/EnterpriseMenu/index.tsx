@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import * as EnterpriseMenuStyles from "./styles.ts";
 import api from "../../../services/api.ts";
 
-import { PlaceholderItemMenu } from "#root/assets/index.ts";
+import { LabelIcon, PlaceholderItemMenu } from "#root/assets/index.ts";
 import Typography from "#root/components/Typography/index.tsx";
 import { useState } from "react";
 import mockedData from "./mock.ts";
@@ -93,13 +93,24 @@ function EnterpriseMenu() {
                   {category.name}
                 </Typography>
               </EnterpriseMenuStyles.CategoryTitle>
+
               <EnterpriseMenuStyles.CategoryItemsBox>
                 {category.items.map((item) => (
                   <EnterpriseMenuStyles.CategoryItemCard key={item.title}>
+                    {item.promotionPercentage && (
+                      <EnterpriseMenuStyles.CategoryItemsPriceLabelIcon>
+                        <LabelIcon />
+                        <EnterpriseMenuStyles.CategoryItemsPriceLabelText>
+                          <div className="">
+                            {`${item.promotionPercentage}%`}
+                          </div>
+                          <div className="">OFF</div>
+                        </EnterpriseMenuStyles.CategoryItemsPriceLabelText>
+                      </EnterpriseMenuStyles.CategoryItemsPriceLabelIcon>
+                    )}
                     <EnterpriseMenuStyles.CategoryItemsImage
                       src={PlaceholderItemMenu}
                     />
-
                     <EnterpriseMenuStyles.CategoryItemCardContent>
                       <div className="">
                         <Typography variant="bolder" as="h4" size="fit">

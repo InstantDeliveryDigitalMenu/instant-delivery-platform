@@ -66,6 +66,10 @@ export const ButtonContainer = styled.button<{
         return css`
           width: 100%;
           padding: 0.5rem 2rem;
+
+          @media screen and (max-height: 700px) {
+            padding: 0.3rem 2rem;
+          }
         `;
     }
   }}
@@ -73,9 +77,7 @@ export const ButtonContainer = styled.button<{
   ${({ variant, textColor }) => {
     switch (variant) {
       case "default":
-        return css`
-          /* padding: 0.25rem 0.5rem; */
-        `;
+        return css``;
       case "outline":
         return css`
           background-color: #fff;

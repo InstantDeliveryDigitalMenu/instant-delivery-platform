@@ -47,7 +47,7 @@ const ButtonsAccordion = ({
       <ButtonsAccordionStyles.ListButtonsContent>
         {listData.map((item) => (
           <Button
-            size="full"
+            size={"full"}
             variant={isItemSelected(item) ? "default" : "outline"}
             color="secondary"
             textColor="gray-lighter"

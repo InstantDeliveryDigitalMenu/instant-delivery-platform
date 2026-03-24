@@ -8,6 +8,10 @@ export const Container = styled.div`
   width: 100%;
 
   gap: 0.5rem;
+
+  @media screen and (max-width: 1550px) {
+    gap: 0.3rem;
+  }
 `;
 
 export const ListButtonsContent = styled.div`
@@ -16,4 +20,8 @@ export const ListButtonsContent = styled.div`
   width: 80%;
 
   gap: 0.5rem;
+
+  @media screen and (max-width: 1550px) {
+    gap: 0.35rem;
+  }
 `;

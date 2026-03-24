@@ -37,6 +37,30 @@ const mockedData: EnterpriseMenuDataProps = {
           promotionPrice: 19.99,
           promotionPercentage: 20,
           imageUrl: "https://example.com/images/hamburguer-classico.jpg"
+        },
+        {
+          title: "Frango Grelhado com Purê",
+          description: "Purê de batatas, salada fresca e frango grelhado.",
+          originalPrice: 32.9,
+          promotionPrice: 19.99,
+          promotionPercentage: 20,
+          imageUrl: "https://example.com/images/hamburguer-classico.jpg"
+        },
+        {
+          title: "Frango à Milanesa com Cogumelos",
+          description: "Frango empanado, molho de cogumelos e salada.",
+          originalPrice: 38.9,
+          promotionPrice: 24.99,
+          promotionPercentage: 17,
+          imageUrl: "https://example.com/images/pizza-margherita.jpg"
+        },
+        {
+          title: "Bowl de Camarão",
+          description: "Camarões grelhados, arroz e legumes salteados.",
+          originalPrice: 44.9,
+          promotionPrice: 19.99,
+          promotionPercentage: 20,
+          imageUrl: "https://example.com/images/hamburguer-classico.jpg"
         }
       ]
     },
@@ -67,6 +91,30 @@ const mockedData: EnterpriseMenuDataProps = {
           promotionPrice: 19.99,
           promotionPercentage: 20,
           imageUrl: "https://example.com/images/hamburguer-classico.jpg"
+        },
+        {
+          title: "Frango Grelhado com Purê",
+          description: "Purê de batatas, salada fresca e frango grelhado.",
+          originalPrice: 32.9,
+          promotionPrice: 19.99,
+          promotionPercentage: 20,
+          imageUrl: "https://example.com/images/hamburguer-classico.jpg"
+        },
+        {
+          title: "Frango à Milanesa com Cogumelos",
+          description: "Frango empanado, molho de cogumelos e salada.",
+          originalPrice: 38.9,
+          promotionPrice: 24.99,
+          promotionPercentage: 17,
+          imageUrl: "https://example.com/images/pizza-margherita.jpg"
+        },
+        {
+          title: "Bowl de Camarão",
+          description: "Camarões grelhados, arroz e legumes salteados.",
+          originalPrice: 44.9,
+          promotionPrice: 19.99,
+          promotionPercentage: 20,
+          imageUrl: "https://example.com/images/hamburguer-classico.jpg"
         }
       ]
     },
@@ -74,6 +122,30 @@ const mockedData: EnterpriseMenuDataProps = {
       name: "Hamburger",
       color: "#892920",
       items: [
+        {
+          title: "Frango Grelhado com Purê",
+          description: "Purê de batatas, salada fresca e frango grelhado.",
+          originalPrice: 32.9,
+          promotionPrice: 19.99,
+          promotionPercentage: 20,
+          imageUrl: "https://example.com/images/hamburguer-classico.jpg"
+        },
+        {
+          title: "Frango à Milanesa com Cogumelos",
+          description: "Frango empanado, molho de cogumelos e salada.",
+          originalPrice: 38.9,
+          promotionPrice: 24.99,
+          promotionPercentage: 17,
+          imageUrl: "https://example.com/images/pizza-margherita.jpg"
+        },
+        {
+          title: "Bowl de Camarão",
+          description: "Camarões grelhados, arroz e legumes salteados.",
+          originalPrice: 44.9,
+          promotionPrice: 19.99,
+          promotionPercentage: 20,
+          imageUrl: "https://example.com/images/hamburguer-classico.jpg"
+        },
         {
           title: "Frango Grelhado com Purê",
           description: "Purê de batatas, salada fresca e frango grelhado.",
