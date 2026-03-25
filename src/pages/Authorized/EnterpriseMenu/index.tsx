@@ -1,14 +1,15 @@
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+// import { useNavigate } from "react-router-dom";
+// import { toast } from "react-toastify";
 
 import * as EnterpriseMenuStyles from "./styles.ts";
-import api from "../../../services/api.ts";
+// import api from "../../../services/api.ts";
 
 import { LabelIcon, PlaceholderItemMenu } from "#root/assets/index.ts";
 import Typography from "#root/components/Typography/index.tsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import mockedData from "./mock.ts";
 import EnterpriseMenuSidebar from "./sidebar.tsx";
+import Footer from "#root/components/Footer/index.tsx";
 
 interface MenuItemProps {
   title: string;
@@ -37,7 +38,7 @@ export interface EnterpriseMenuDataProps {
 }
 
 function EnterpriseMenu() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [menuData, setMenuData] = useState<EnterpriseMenuDataProps>(mockedData);
   const [searchParams, setSearchParams] = useState({
@@ -73,6 +74,10 @@ function EnterpriseMenu() {
   const primaryColor = menuData?.primaryColor;
   const secondaryColor = menuData?.secundaryColor;
 
+  useEffect(() => {
+    setMenuData(mockedData);
+  }, []);
+
   return (
     <EnterpriseMenuStyles.Container>
       <EnterpriseMenuSidebar
@@ -85,76 +90,79 @@ function EnterpriseMenu() {
         secundaryColor={secondaryColor}
       />
       <EnterpriseMenuStyles.RightContent>
-        {filteredItems.length > 0 ? (
-          filteredItems.map((category) => (
-            <EnterpriseMenuStyles.CategoryBox key={category.name}>
-              <EnterpriseMenuStyles.CategoryTitle color={category.color}>
-                <Typography variant="bolder" as="h4" size="fit">
-                  {category.name}
-                </Typography>
-              </EnterpriseMenuStyles.CategoryTitle>
+        <div>
+          {filteredItems.length > 0 ? (
+            filteredItems.map((category) => (
+              <EnterpriseMenuStyles.CategoryBox key={category.name}>
+                <EnterpriseMenuStyles.CategoryTitle color={category.color}>
+                  <Typography variant="bolder" as="h4" size="fit">
+                    {category.name}
+                  </Typography>
+                </EnterpriseMenuStyles.CategoryTitle>
 
-              <EnterpriseMenuStyles.CategoryItemsBox>
-                {category.items.map((item) => (
-                  <EnterpriseMenuStyles.CategoryItemCard key={item.title}>
-                    {item.promotionPercentage && (
-                      <EnterpriseMenuStyles.CategoryItemsPriceLabelIcon>
-                        <LabelIcon />
-                        <EnterpriseMenuStyles.CategoryItemsPriceLabelText>
-                          <div className="">
-                            {`${item.promotionPercentage}%`}
-                          </div>
-                          <div className="">OFF</div>
-                        </EnterpriseMenuStyles.CategoryItemsPriceLabelText>
-                      </EnterpriseMenuStyles.CategoryItemsPriceLabelIcon>
-                    )}
-                    <EnterpriseMenuStyles.CategoryItemsImage
-                      src={PlaceholderItemMenu}
-                    />
-                    <EnterpriseMenuStyles.CategoryItemCardContent>
-                      <div className="">
-                        <Typography variant="bolder" as="h4" size="fit">
-                          {item.title}
-                        </Typography>
-                        <EnterpriseMenuStyles.CategoryItemsPriceTextDivider
-                          color={category.color}
-                        />
-                        <Typography as="span" size="fit">
-                          {item.description}
-                        </Typography>
-                      </div>
-                      <EnterpriseMenuStyles.CategoryItemsPriceBox>
-                        <EnterpriseMenuStyles.CategoryItemsPriceText
-                          as="h4"
-                          size="fit"
-                          variant="bolder"
-                          color={category.color}
-                          dashed={item.promotionPrice ? "enabled" : undefined}
-                        >
-                          R$ {item.originalPrice.toFixed(2)}
-                        </EnterpriseMenuStyles.CategoryItemsPriceText>
-                        {item.promotionPrice && (
+                <EnterpriseMenuStyles.CategoryItemsBox>
+                  {category.items.map((item) => (
+                    <EnterpriseMenuStyles.CategoryItemCard key={item.title}>
+                      {item.promotionPercentage && (
+                        <EnterpriseMenuStyles.CategoryItemsPriceLabelIcon>
+                          <LabelIcon />
+                          <EnterpriseMenuStyles.CategoryItemsPriceLabelText>
+                            <div className="">
+                              {`${item.promotionPercentage}%`}
+                            </div>
+                            <div className="">OFF</div>
+                          </EnterpriseMenuStyles.CategoryItemsPriceLabelText>
+                        </EnterpriseMenuStyles.CategoryItemsPriceLabelIcon>
+                      )}
+                      <EnterpriseMenuStyles.CategoryItemsImage
+                        src={PlaceholderItemMenu}
+                      />
+                      <EnterpriseMenuStyles.CategoryItemCardContent>
+                        <div className="">
+                          <Typography variant="bolder" as="h4" size="fit">
+                            {item.title}
+                          </Typography>
+                          <EnterpriseMenuStyles.CategoryItemsPriceTextDivider
+                            color={category.color}
+                          />
+                          <Typography as="span" size="fit">
+                            {item.description}
+                          </Typography>
+                        </div>
+                        <EnterpriseMenuStyles.CategoryItemsPriceBox>
                           <EnterpriseMenuStyles.CategoryItemsPriceText
-                            as="h3"
+                            as="h4"
                             size="fit"
                             variant="bolder"
                             color={category.color}
+                            dashed={item.promotionPrice ? "enabled" : undefined}
                           >
-                            R$ {item.promotionPrice.toFixed(2)}
+                            R$ {item.originalPrice.toFixed(2)}
                           </EnterpriseMenuStyles.CategoryItemsPriceText>
-                        )}
-                      </EnterpriseMenuStyles.CategoryItemsPriceBox>
-                    </EnterpriseMenuStyles.CategoryItemCardContent>
-                  </EnterpriseMenuStyles.CategoryItemCard>
-                ))}
-              </EnterpriseMenuStyles.CategoryItemsBox>
-            </EnterpriseMenuStyles.CategoryBox>
-          ))
-        ) : (
-          <Typography variant="bolder" as="h3" size="fit">
-            Nenhum item encontrado para "{searchParams.query}"
-          </Typography>
-        )}
+                          {item.promotionPrice && (
+                            <EnterpriseMenuStyles.CategoryItemsPriceText
+                              as="h3"
+                              size="fit"
+                              variant="bolder"
+                              color={category.color}
+                            >
+                              R$ {item.promotionPrice.toFixed(2)}
+                            </EnterpriseMenuStyles.CategoryItemsPriceText>
+                          )}
+                        </EnterpriseMenuStyles.CategoryItemsPriceBox>
+                      </EnterpriseMenuStyles.CategoryItemCardContent>
+                    </EnterpriseMenuStyles.CategoryItemCard>
+                  ))}
+                </EnterpriseMenuStyles.CategoryItemsBox>
+              </EnterpriseMenuStyles.CategoryBox>
+            ))
+          ) : (
+            <Typography variant="bolder" as="h3" size="fit">
+              Nenhum item encontrado para "{searchParams.query}"
+            </Typography>
+          )}
+        </div>
+        <Footer />
       </EnterpriseMenuStyles.RightContent>
     </EnterpriseMenuStyles.Container>
   );

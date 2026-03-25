@@ -95,7 +95,7 @@ const Payment: React.FunctionComponent<PaymentProps> = ({
         </PaymentStyles.NavButtonsContainer>
         <form onSubmit={handleSubmit(handleFormSubmit)}>
           <div>
-            <Typography as="h2" variant="bolder" color="gray">
+            <Typography as="h2" variant="bolder" color="gray-darker">
               Pagamento - Etapa 3 de 6
             </Typography>
             <Divider />

@@ -47,7 +47,7 @@ function Appearance({ nextStep, lastStep }: AppearanceProps) {
           </AppearanceStyles.NavButtonsContent>
         </AppearanceStyles.NavButtonsContainer>
         <form onSubmit={handleSubmit(handleFormSubmit)}>
-          <Typography as="h2" variant="bolder" color="gray">
+          <Typography as="h2" variant="bolder" color="gray-darker">
             Apresentação - Etapa 2 de 6
           </Typography>
           <Divider />

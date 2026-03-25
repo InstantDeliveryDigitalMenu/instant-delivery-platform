@@ -3,11 +3,14 @@ import CoinIcon from "./icons/coin-icon.svg?react";
 import ClockIcon from "./icons/clock-icon.svg?react";
 import DropdownIconUp from "./icons/dropdown/dropdown-icon-up.svg?react";
 import DropdownIconDown from "./icons/dropdown/dropdown-icon-down.svg?react";
+import FacebookIcon from "./icons/social/facebook-icon.svg?react";
 import GrayBulletIcon from "./icons/gray-bullet-icon.svg?react";
 import GreenBulletIcon from "./icons/green-bullet-icon.svg?react";
+import InstagramIcon from "./icons/social/instagram-icon.svg?react";
 import LabelIcon from "./icons/label-icon.svg?react";
 import MailIcon from "./icons/mail-icon.svg?react";
 import PadlockIcon from "./icons/padlock-icon.svg?react";
+import WhatsappIcon from "./icons/social/whatsapp-icon.svg?react";
 
 // Images
 import InstantDeliveryLogo from "./images/instant-delivery-logo.svg?react";
@@ -23,14 +26,17 @@ export {
   ClockIcon,
   DropdownIconUp,
   DropdownIconDown,
+  FacebookIcon,
   GrayBulletIcon,
   GreenBulletIcon,
   LabelIcon,
   MailIcon,
   PadlockIcon,
+  PlaceholderItemMenu,
+  InstagramIcon,
   InstantDeliveryLogo,
   InstantDeliveryLogoFull,
   RestaurantImage,
   RestaurantePlaceholderLogo,
-  PlaceholderItemMenu
+  WhatsappIcon
 };

@@ -81,7 +81,7 @@ function General({ nextStep }: GeneralProps) {
       </GeneralStyles.LeftContent>
       <GeneralStyles.RightContent>
         <form onSubmit={handleSubmit(handleFormSubmit)}>
-          <Typography as="h2" variant="bolder" color="gray">
+          <Typography as="h2" variant="bolder" color="gray-darker">
             Dados Gerais - Etapa 1 de 6
           </Typography>
           <Divider />

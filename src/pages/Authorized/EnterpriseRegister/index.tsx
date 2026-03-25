@@ -14,7 +14,7 @@ type Steps =
   | "Contact"
   | "User Details";
 
-function EntherpriseRegister() {
+function EnterpriseRegister() {
   const [steps, setSteps] = useState<Steps>("General");
   // const [userData, setUserData] = useState();
 
@@ -52,4 +52,4 @@ function EntherpriseRegister() {
   );
 }
 
-export default EntherpriseRegister;
+export default EnterpriseRegister;

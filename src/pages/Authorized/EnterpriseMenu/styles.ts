@@ -48,8 +48,8 @@ export const LeftContent = styled.section`
 `;
 
 export const EnterpriseMenuLogo = styled.img`
-  width: 200px;
-  max-height: 200px;
+  width: 12rem;
+  max-height: 12rem;
   height: fit-content;
 
   margin-bottom: 0.5rem;
@@ -63,6 +63,7 @@ export const EnterpriseMenuLogo = styled.img`
 
   @media screen and (min-width: 600px) and (max-height: 700px) {
     width: 8rem;
+    max-height: 8rem;
 
     padding-top: 0.5rem;
   }
@@ -161,8 +162,16 @@ export const RightContent = styled.div`
   overflow-x: hidden;
   overflow-y: auto;
 
-  gap: 2rem;
-  padding: 1rem 1rem 0rem 1rem;
+  padding-top: 4rem;
+  padding-bottom: 0rem;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    margin-bottom: 2rem;
+  }
 
   @media screen and (max-width: 600px) {
     overflow: visible;
@@ -311,13 +320,9 @@ export const CategoryItemsPriceTextDivider = styled.div<{
   display: flex;
   width: 100%;
 
-  /* background-color: var(--tertiary); */
-
   border: 1px solid
     ${({ color }) => (color ? `${color}` : `var(--gray-darker)`)};
   margin: 0.15rem 0;
-
-  /* color:; */
 `;
 
 export const CategoryItemsPriceBox = styled.div`
