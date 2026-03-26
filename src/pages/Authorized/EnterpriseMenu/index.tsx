@@ -94,8 +94,15 @@ function EnterpriseMenu() {
           {filteredItems.length > 0 ? (
             filteredItems.map((category) => (
               <EnterpriseMenuStyles.CategoryBox key={category.name}>
-                <EnterpriseMenuStyles.CategoryTitle color={category.color}>
-                  <Typography variant="bolder" as="h4" size="fit">
+                <EnterpriseMenuStyles.CategoryTitle
+                  color={menuData?.primaryColor}
+                >
+                  <Typography
+                    variant="bolder"
+                    as="h4"
+                    size="fit"
+                    customColor={menuData?.secundaryColor}
+                  >
                     {category.name}
                   </Typography>
                 </EnterpriseMenuStyles.CategoryTitle>
@@ -123,7 +130,7 @@ function EnterpriseMenu() {
                             {item.title}
                           </Typography>
                           <EnterpriseMenuStyles.CategoryItemsPriceTextDivider
-                            color={category.color}
+                            color={menuData?.primaryColor}
                           />
                           <Typography as="span" size="fit">
                             {item.description}
@@ -134,7 +141,7 @@ function EnterpriseMenu() {
                             as="h4"
                             size="fit"
                             variant="bolder"
-                            color={category.color}
+                            color={menuData?.primaryColor}
                             dashed={item.promotionPrice ? "enabled" : undefined}
                           >
                             R$ {item.originalPrice.toFixed(2)}
@@ -144,7 +151,7 @@ function EnterpriseMenu() {
                               as="h3"
                               size="fit"
                               variant="bolder"
-                              color={category.color}
+                              color={menuData?.primaryColor}
                             >
                               R$ {item.promotionPrice.toFixed(2)}
                             </EnterpriseMenuStyles.CategoryItemsPriceText>

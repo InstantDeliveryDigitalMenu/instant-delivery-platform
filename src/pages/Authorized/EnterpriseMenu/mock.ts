@@ -12,14 +12,11 @@ const mockedData: EnterpriseMenuDataProps = {
   categories: [
     {
       name: "Refeições",
-      color: "#892920",
       items: [
         {
           title: "Frango Grelhado com Purê",
           description: "Purê de batatas, salada fresca e frango grelhado.",
           originalPrice: 32.9,
-          promotionPrice: 19.99,
-          promotionPercentage: 20,
           imageUrl: "https://example.com/images/hamburguer-classico.jpg"
         },
         {
@@ -66,7 +63,6 @@ const mockedData: EnterpriseMenuDataProps = {
     },
     {
       name: "Porções",
-      color: "#892920",
       items: [
         {
           title: "Frango Grelhado com Purê",
@@ -120,7 +116,6 @@ const mockedData: EnterpriseMenuDataProps = {
     },
     {
       name: "Hamburger",
-      color: "#892920",
       items: [
         {
           title: "Frango Grelhado com Purê",
